@@ -96,3 +96,11 @@ input:focus { border-color: #9b93ed; box-shadow: 0 0 0 3px #6e62d91a; }
   .add-form { flex-direction: column; }
   .add-button { min-height: 45px; }
 }
+
+.login-logo {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
