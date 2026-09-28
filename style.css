@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #20243a;
+  --muted: #85899b;
+  --line: #eceef4;
+  --purple: #6e62d9;
+  --purple-dark: #5c50c8;
+  --soft-purple: #f0efff;
+  --paper: #ffffff;
+  --background: #f5f6fb;
+  font-family: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 0%, #eeedff 0, var(--background) 54%);
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.page-shell { width: min(100%, 560px); }
+.login-card, .todo-card {
+  background: var(--paper);
+  border: 1px solid rgba(232, 233, 243, .8);
+  border-radius: 22px;
+  box-shadow: 0 18px 55px rgba(43, 43, 79, .09);
+}
+.login-card { width: min(100%, 430px); margin: auto; padding: 42px 42px 30px; text-align: center; }
+.brand-mark { width: 46px; height: 46px; display: grid; place-items: center; margin: 0 auto 23px; border-radius: 15px; color: white; background: var(--purple); font-size: 25px; font-weight: 700; box-shadow: 0 7px 16px #6e62d94d; }
+.eyebrow { margin: 0 0 9px; color: var(--purple); font-size: 11px; font-weight: 700; letter-spacing: .13em; }
+h1, h2, p { margin-top: 0; }
+h1, h2 { font-family: 'Manrope', sans-serif; }
+.login-card h1 { margin-bottom: 8px; font-size: 27px; letter-spacing: -.7px; }
+.muted { color: var(--muted); }
+.intro { margin-bottom: 28px; font-size: 14px; }
+label { display: block; margin: 16px 0 7px; text-align: left; font-size: 12px; font-weight: 600; }
+input { width: 100%; min-height: 47px; padding: 0 14px; border: 1px solid #e6e8f0; border-radius: 10px; outline: 0; color: var(--ink); background: #fff; transition: border-color .15s, box-shadow .15s; }
+input::placeholder { color: #b5b8c5; }
+input:focus { border-color: #9b93ed; box-shadow: 0 0 0 3px #6e62d91a; }
+.button { border: 0; border-radius: 10px; font-weight: 600; transition: transform .15s, background .15s; }
+.button:hover { transform: translateY(-1px); }
+.button-primary { color: white; background: var(--purple); }
+.button-primary:hover { background: var(--purple-dark); }
+.login-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 48px; margin-top: 23px; }
+.demo-note { margin: 24px 0 0; color: #a1a4b2; font-size: 11px; }
+.todo-card { padding: 34px 36px 20px; }
+.app-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 27px; }
+.app-header h1 { margin: 0 0 5px; font-size: 28px; letter-spacing: -.8px; }
+.app-header .muted { margin: 0; font-size: 13px; }
+.icon-button { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 11px; color: #74788c; background: white; font-size: 19px; }
+.icon-button:hover { background: #f8f8fc; }
+.add-form { display: flex; gap: 9px; }
+.add-form input { flex: 1; min-width: 0; }
+.add-button { flex-shrink: 0; padding: 0 16px; }
+.add-button span { margin-right: 5px; font-size: 18px; vertical-align: -1px; }
+.list-heading { display: flex; align-items: center; justify-content: space-between; margin: 31px 0 14px; }
+.list-heading h2 { margin: 0; font-size: 17px; }
+.count-pill { padding: 5px 10px; border-radius: 20px; color: var(--purple); background: var(--soft-purple); font-size: 11px; font-weight: 600; }
+.filters { display: flex; gap: 7px; padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+.filter-button { padding: 7px 12px; border: 0; border-radius: 8px; color: #85899b; background: transparent; font-size: 12px; }
+.filter-button:hover { color: var(--purple); }
+.filter-button.active { color: var(--purple); background: var(--soft-purple); font-weight: 600; }
+.task-list { display: grid; gap: 2px; margin: 5px 0 0; padding: 0; list-style: none; }
+.task-item { display: flex; align-items: center; gap: 11px; min-height: 52px; border-bottom: 1px solid #f1f2f6; animation: appear .18s ease-out; }
+.task-check { appearance: none; flex: 0 0 19px; width: 19px; height: 19px; min-height: 19px; margin: 0; padding: 0; border: 1.5px solid #d3d5e0; border-radius: 50%; cursor: pointer; }
+.task-check:checked { border-color: var(--purple); background-color: var(--purple); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m3.5 8.2 2.8 2.6 6.2-6' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8'/%3E%3C/svg%3E"); background-position: center; background-size: 14px; }
+.task-text { flex: 1; overflow-wrap: anywhere; font-size: 13px; }
+.task-item.completed .task-text { color: #a4a7b3; text-decoration: line-through; }
+.delete-button { width: 30px; height: 30px; border: 0; border-radius: 8px; color: #afb2bf; background: transparent; font-size: 18px; }
+.delete-button:hover { color: #d05d71; background: #fff0f2; }
+.empty-state { padding: 36px 10px 32px; text-align: center; }
+.empty-icon { display: inline-grid; place-items: center; width: 38px; height: 38px; margin-bottom: 12px; border-radius: 13px; color: var(--purple); background: var(--soft-purple); font-size: 19px; }
+.empty-state p { margin-bottom: 5px; font-size: 12px; }
+.empty-state .empty-title { color: var(--ink); font-weight: 600; font-size: 13px; }
+.app-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 43px; margin-top: 5px; border-top: 1px solid var(--line); color: #9a9dac; font-size: 11px; }
+.text-button { padding: 5px 0; border: 0; color: var(--purple); background: transparent; font-size: 11px; }
+.text-button:hover { text-decoration: underline; }
+.hidden { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); border: 0; }
+@keyframes appear { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 520px) {
+  body { padding: 18px 12px; }
+  .todo-card { padding: 27px 20px 14px; border-radius: 18px; }
+  .login-card { padding: 35px 25px 26px; }
+  .app-header h1 { font-size: 25px; }
+}
+@media (max-width: 390px) {
+  .add-form { flex-direction: column; }
+  .add-button { min-height: 45px; }
+}
